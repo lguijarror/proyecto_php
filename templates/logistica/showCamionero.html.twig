@@ -1,0 +1,15 @@
+{% extends "logistica/baseTemplate.html.twig" %}
+{% block contenido %}
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">{{ camionero.nombre }}</h1>
+        <hr class="my-4">
+        <p class="lead"><b>DNI:</b> {{ camionero.dni }}</p>
+        <p class="lead"><b>TELEFONO:</b> {{ camionero.telefono }}</p>
+        <p class="lead"><b>DIRECCIÓN:</b> {{ camionero.direccion }}</p>
+        <p class="lead"><b>POBLACIÓN:</b> {{ camionero.poblacion }}</p>
+        <p class="lead"><b>SALARIO:</b> {{ camionero.salario }}</p>
+        <a href="{{ path("detalleTransportes",{"dniCamionero":camionero.dni}) }}" class="btn btn-primary">Ver viajes</a>
+    </div>
+
+
+{% endblock %}

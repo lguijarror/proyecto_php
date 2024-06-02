@@ -1,0 +1,14 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+    
+    
+    #index:
+#    path: /
+#    controller: App\Controller\DefaultController::home
+#
+#detalle:
+#  path: /detalle/{dni}
+#  controller: App\Controller\DefaultController::detalle

@@ -1,0 +1,36 @@
+{% extends "logistica/baseTemplate.html.twig" %}
+
+{% block contenido %}
+
+        <h2 class="mb-5">Viajes </h2>
+
+    {% for message in app.flashes('éxito') %}
+        <p>{{ message }}</p>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID TRANSPORTE</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">MATRICULA VEHÍCULO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                  
+                    {% for transporte in transportes %}
+                         <tr>
+                            <th scope="row">{{ transporte.idTransporte }}</th>
+                            <td>{{ transporte.fecha|date("d/m/Y") }}</td>
+                            <td>{{ transporte.matriculaCamion }}</td>
+                        </tr>   
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>    
+
+{% endblock %}

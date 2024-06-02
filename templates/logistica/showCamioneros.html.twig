@@ -1,0 +1,36 @@
+{% extends "logistica/baseTemplate.html.twig" %}
+
+{% block contenido %}
+
+        <h2 class="mb-5">Empleados </h2>
+
+    {% for message in app.flashes('éxito') %}
+        <p>{{ message }}</p>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">DNI</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                  
+                    {% for camionero in camioneros %}
+                         <tr>
+                            <th scope="row">{{ camionero.dni }}</th>
+                            <td>{{ camionero.nombre }}</td>
+                            <td><a href="{{ path("detalle",{"dni":camionero.dni}) }}" class="btn btn-primary">Ver ficha</a></td>
+                        </tr>   
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>    
+
+{% endblock %}
